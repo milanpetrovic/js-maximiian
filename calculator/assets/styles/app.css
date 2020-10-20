@@ -51,6 +51,6 @@ button {
 #results {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: centers;
     justify-content: space-between;
 }
