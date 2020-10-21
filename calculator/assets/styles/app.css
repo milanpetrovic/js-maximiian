@@ -46,6 +46,12 @@ button {
     border: none;
     font-size: 1.5rem;
     padding: .5em 1.2em;
+    margin: 0 .2em;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.3);
 }
 
 #results {
