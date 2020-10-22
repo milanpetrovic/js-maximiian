@@ -1,13 +1,9 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-function add(num1, num2) {
-    const result = num1 + num2;
-    return result;
+function add() {
+    currentResult = currentResult + userInput.value;
+    outputResult(currentResult, '');
 }
 
-currentResult = add(10,23);
-
-let calculationDescription = `(${defaultResult} + 10) * 2 - 4 (incorrect)`;
-
-outputResult(currentResult, calculationDescription);
+addBtn.addEventListener('click', add);
