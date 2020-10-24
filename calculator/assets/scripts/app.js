@@ -39,7 +39,7 @@ function calculateResult(calculationType) {
     } else if (calculationType === 'MULTIPLY') {
         currentResult *= enteredNumber;
         mathOperator = '*';
-    } else {
+    } else if(calculationType === 'DIVIDE') {
         currentResult /= enteredNumber;
         mathOperator = '/';
     }
