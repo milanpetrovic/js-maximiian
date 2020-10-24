@@ -26,16 +26,18 @@ function writeToLog(operation, prevResult, newNumber, newResult) {
 
 // Function that handles all calculations based on provided type
 function calculateResult(calculationType) {
+    const enteredNumber = getUserNumberInput();
+
     if (
         calculationType !== 'ADD' &&
         calculationType !== 'SUBTRACT' && 
         calculationType !== 'MULTIPLY' && 
-        calculationType !== 'DIVIDE'
+        calculationType !== 'DIVIDE' ||
+        !enteredNumber // falsy, 0 value
     ) {
         return;
     }
     
-    const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
     let mathOperator;
 
