@@ -10,6 +10,12 @@ let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
 
+function reset() {
+    currentMonsterHealth = chosenMaxLife;
+    currentPlayerHealth = chosenMaxLife;
+    resetGame(chosenMaxLife);
+}
+
 function endRound() {
     const initialPlayerHealth = currentPlayerHealth;
     const damageToPlayer = dealPlayerDamage(MONSTER_ATTACK_VALUE);
@@ -24,11 +30,16 @@ function endRound() {
     }
 
     if ( currentMonsterHealth <= 0 && currentPlayerHealth > 0 ) {
-        console.log('You won!');
+        alert('You won!');
     } else if ( currentPlayerHealth <= 0 && currentMonsterHealth > 0 ) {
-        console.log('You lost!');
+        alert('You lost!');
     } else if ( currentMonsterHealth <= 0 && currentPlayerHealth <= 0 ) {
-        console.log('It\'s a draw!');
+        alert('It\'s a draw!');
+    }
+
+    // No matter who won or lost, game will reset
+    if ( currentMonsterHealth <= 0 || currentPlayerHealth <=0 ) {
+        reset();
     }
 }
 
