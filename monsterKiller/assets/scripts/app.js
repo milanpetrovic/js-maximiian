@@ -18,12 +18,17 @@ function getMaxLifeValues() {
     if ( isNaN(parsedValue) || parsedValue <= 0 ) {
         throw {message: 'Invalid user input, not a number!'};
     }
-
     return parsedValue;
 }
 
-let chosenMaxLife = getMaxLifeValues();
-
+let chosenMaxLife;
+try {
+    chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+    console.log(error.message);
+    chosenMaxLife = 100;
+    alert('You entered invalid value, default value of 100 was set.')
+}
 
 let battleLog = [];
 let lastLoggedEntry;
