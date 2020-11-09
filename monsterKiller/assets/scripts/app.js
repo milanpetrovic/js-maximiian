@@ -12,15 +12,14 @@ const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
 const enteredValue = prompt('Set maximum life for player and monster:', '100');
-
 let chosenMaxLife = parseInt(enteredValue);
-let battleLog = [];
-let lastLoggedEntry;
-
 // If entered value is NaN or negative, set maxLife to default 100
 if ( isNaN(chosenMaxLife) || chosenMaxLife <= 0 ) {
     chosenMaxLife = 100;
 }
+
+let battleLog = [];
+let lastLoggedEntry;
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
