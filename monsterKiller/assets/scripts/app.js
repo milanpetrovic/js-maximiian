@@ -125,6 +125,12 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
+    // For loop has access to index of every logEntry
+    // for( let i = 0; i < battleLog.length; i++ ) {
+    //     console.log(battleLog[i]);
+    // }
+
+    // For-of loop doesn't have index accessible by default
     for( const logEntry of battleLog ) {
         console.log(logEntry);
     }
